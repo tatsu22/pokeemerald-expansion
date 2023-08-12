@@ -4396,13 +4396,14 @@ static void Cmd_getexp(void)
                     gBattleStruct->wildVictorySong++;
                 }
 
-                if (IsValidForBattle(&gPlayerParty[gBattleStruct->expGetterMonId]))
+                if (IsValidForBattle(&gPlayerParty[gBattleStruct->expGetterMonId]) && !IsLevelCapped(&gPlayerParty[gBattleStruct->expGetterMonId]))
                 {
                     if (gBattleStruct->sentInPokes & 1)
                         gBattleMoveDamage = *exp;
                     else
-                        gBattleMoveDamage = 0;
+                        gBattleMoveDamage = gExpShareExp; // MY CHANGES always giving exp share
 
+                    /* MY CHANGES always giving exp share so no need to do this calc
                     // only give exp share bonus in later gens if the mon wasn't sent out
                 #if B_SPLIT_EXP < GEN_6
                     if (holdEffect == HOLD_EFFECT_EXP_SHARE)
@@ -4417,6 +4418,7 @@ static void Cmd_getexp(void)
                     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
                 #endif
+                */
                 #if (B_SCALED_EXP >= GEN_5) && (B_SCALED_EXP != GEN_6)
                     {
                         // Note: There is an edge case where if a pokemon receives a large amount of exp, it wouldn't be properly calculated
@@ -4543,7 +4545,7 @@ static void Cmd_getexp(void)
         }
         break;
     case 5: // looper increment
-        if (gBattleMoveDamage) // there is exp to give, goto case 3 that gives exp
+        if (gBattleMoveDamage && !IsLevelCapped(&gPlayerParty[gBattleStruct->expGetterMonId])) // there is exp to give and we're not level capped, goto case 3 that gives exp
         {
             gBattleScripting.getexpState = 3;
         }

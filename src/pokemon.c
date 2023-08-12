@@ -8611,3 +8611,44 @@ void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
     boxMon->checksum = CalculateBoxMonChecksum(boxMon);
     EncryptBoxMon(boxMon);
 }
+
+// ----------
+// MY CHANGES
+// ----------
+
+// Get the latest badge the player has earned (unless they skipped Winona)
+// League is counted as badge 9 for simplicity
+static u16 getHighestBadge(void)
+{
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        return 9;
+    if (FlagGet(FLAG_BADGE08_GET))
+        return 8;
+    if (FlagGet(FLAG_BADGE07_GET))
+        return 7;
+    if (FlagGet(FLAG_BADGE06_GET))
+        return 6;
+    if (FlagGet(FLAG_BADGE05_GET))
+        return 5;
+    if (FlagGet(FLAG_BADGE04_GET))
+        return 4;
+    if (FlagGet(FLAG_BADGE03_GET))
+        return 3;
+    if (FlagGet(FLAG_BADGE02_GET))
+        return 2;
+    if (FlagGet(FLAG_BADGE01_GET))
+        return 1;
+
+    return 0;
+}
+
+u8 GetLevelCap(void)
+{
+    u16 currentBadge = getHighestBadge();
+    static const u8 levelCaps[] = {16, 25, 38, 50,  54,  70,  85,  92,  95, 101};
+    return levelCaps[currentBadge];
+}
+
+bool32 IsLevelCapped(struct Pokemon *mon) {
+    return GetMonData(mon, MON_DATA_LEVEL) >= GetLevelCap();
+}
