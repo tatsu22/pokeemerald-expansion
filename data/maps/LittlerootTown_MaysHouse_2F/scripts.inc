@@ -344,10 +344,6 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Who are you?\p"
 	.string "Oh, you're {PLAYER}, aren't you?\n"
 	.string "Moved in next door, right?\p"
-	.string "I didn't know that you're a girl.\p"
-	.string "Dad, PROF. BIRCH, said that our new\n"
-	.string "next-door neighbor is a GYM LEADER's\l"
-	.string "kid, so I assumed you'd be a guy.\p"
 	.string "My name's BRENDAN.\n"
 	.string "So, hi, neighbor!\p"
 	.string "Huh? Hey, {PLAYER}, don't you have\n"
@@ -356,7 +352,12 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Aw, darn, I forgot…\p"
 	.string "I'm supposed to go help my dad catch\n"
 	.string "some wild POKéMON.\p"
-	.string "Some other time, okay?$"
+	.string "Some other time, okay?"
+	.string "..."
+	.string "Did you want to get coffee sometime?"
+	.string "..."
+	.string "Oh, dinner then? At Chestnuthill\n"
+	.string "Diner? Ok, I'll meet you there!$"
 
 RivalsHouse_2F_Text_BrendanGettingReady:
 	.string "POKéMON fully restored…\n"
@@ -364,7 +365,8 @@ RivalsHouse_2F_Text_BrendanGettingReady:
 
 RivalsHouse_2F_Text_ItsRivalsPokeBall:
 	.string "It's {RIVAL}'s POKé BALL!\p"
-	.string "Better leave it right where it is.$"
+	.string "Better leave it right where it is."
+	.string "Ya thievin...$"
 
 RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
 	.string "MAY: {PLAYER}{KUN}!\p"

@@ -101,6 +101,8 @@ static void HandleInputChooseMove(void);
 static void MoveSelectionDisplayPpNumber(void);
 static void MoveSelectionDisplayPpString(void);
 static void MoveSelectionDisplayMoveType(void);
+// MY CHANGES adding display of super eff
+static void MoveSelectionDisplayMoveEffectiveness(void);
 static void MoveSelectionDisplayMoveNames(void);
 static void HandleMoveSwitching(void);
 static void SwitchIn_HandleSoundAndEnd(void);
@@ -1725,6 +1727,11 @@ static void MoveSelectionDisplayMoveType(void)
 
     StringCopy(txtPtr, gTypeNames[gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].type]);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
+}
+
+static void MoveSelectionDisplayMoveEffectiveness(void) 
+{
+
 }
 
 void MoveSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)
