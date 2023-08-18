@@ -302,6 +302,10 @@ Route134_EventScript_ItemStarPiece::
 	finditem ITEM_STAR_PIECE
 	end
 
+LittlerootTown_EventScript_ItemMegaRareCandy::
+	finditem ITEM_MEGA_RARE_CANDY
+	end
+
 PetalburgCity_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end

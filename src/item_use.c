@@ -798,6 +798,13 @@ void ItemUseOutOfBattle_RareCandy(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+// MY CHANGES adding mega rare candy
+void ItemUseOutOfBattle_MegaRareCandy(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_MegaRareCandy;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_TMHM(u8 taskId)
 {
     if (gSpecialVar_ItemId >= ITEM_HM01_CUT)
