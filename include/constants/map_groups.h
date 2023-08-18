@@ -63,6 +63,7 @@
 #define MAP_UNDERWATER_ROUTE129 (54 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
+#define MAP_CHESTNUT_HILL_DINER (57 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -72,11 +73,12 @@
 #define MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB (4 | (1 << 8))
 
 // gMapGroup_IndoorOldale
-#define MAP_OLDALE_TOWN_HOUSE1            (0 | (2 << 8))
-#define MAP_OLDALE_TOWN_HOUSE2            (1 | (2 << 8))
-#define MAP_OLDALE_TOWN_POKEMON_CENTER_1F (2 | (2 << 8))
-#define MAP_OLDALE_TOWN_POKEMON_CENTER_2F (3 | (2 << 8))
-#define MAP_OLDALE_TOWN_MART              (4 | (2 << 8))
+#define MAP_OLDALE_TOWN_HOUSE1             (0 | (2 << 8))
+#define MAP_OLDALE_TOWN_HOUSE2             (1 | (2 << 8))
+#define MAP_OLDALE_TOWN_POKEMON_CENTER_1F  (2 | (2 << 8))
+#define MAP_OLDALE_TOWN_POKEMON_CENTER_2F  (3 | (2 << 8))
+#define MAP_OLDALE_TOWN_MART               (4 | (2 << 8))
+#define MAP_OLDALE_TOWN_CHESTNUTHILL_DINER (5 | (2 << 8))
 
 // gMapGroup_IndoorDewford
 #define MAP_DEWFORD_TOWN_HOUSE1            (0 | (3 << 8))

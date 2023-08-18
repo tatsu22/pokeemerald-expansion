@@ -4410,6 +4410,26 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHESTNUT_HILL_DINER",
+      "name": "ChestnutHillDiner_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ChestnutHillDiner/border.bin",
+      "blockdata_filepath": "data/layouts/ChestnutHillDiner/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_TOWN_CHESTNUTHILL_DINER",
+      "name": "OldaleTown_ChestnuthillDiner_Layout",
+      "width": 15,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/OldaleTown_ChestnuthillDiner/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleTown_ChestnuthillDiner/map.bin"
     }
   ]
 }

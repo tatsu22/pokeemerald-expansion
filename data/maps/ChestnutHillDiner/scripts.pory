@@ -1,0 +1,7 @@
+mapscripts ChestnutHillDiner_MapScripts {}
+
+script ChestnutHillDiner_RestaurantSign {
+    lockall
+    msgbox("ChestnutHill Diner")
+    releaseall
+}
