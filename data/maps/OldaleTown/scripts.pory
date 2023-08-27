@@ -401,3 +401,21 @@ OldaleTown_Text_TownSign:
 	.string "“Where things start off scarce.”$"
 `
 
+script OldaleTown_ChestnutHillDiner_RestaurantSign {
+    lockall
+    msgbox("ChestnutHill Diner")
+    releaseall
+}
+
+script OldaleTown_FirstDate_BlockedPath {
+	lock
+	msgbox("I should go see Tyler \n"
+		"at the Chestnuthill Diner")
+	applymovement(OBJ_EVENT_ID_PLAYER, OldaleTown_FirstDate_BlockedPath_Movement)
+	waitmovement(0)
+	release
+}
+
+movement OldaleTown_FirstDate_BlockedPath_Movement {
+	walk_down
+}

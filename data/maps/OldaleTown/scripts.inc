@@ -398,3 +398,30 @@ OldaleTown_Text_BrendanLetsGoBack:
 OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
+
+OldaleTown_ChestnutHillDiner_RestaurantSign::
+	lockall
+	msgbox OldaleTown_ChestnutHillDiner_RestaurantSign_Text_0
+	releaseall
+	return
+
+
+OldaleTown_FirstDate_BlockedPath::
+	lock
+	msgbox OldaleTown_FirstDate_BlockedPath_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_FirstDate_BlockedPath_Movement
+	waitmovement 0
+	release
+	return
+
+
+OldaleTown_FirstDate_BlockedPath_Movement:
+	walk_down
+	step_end
+
+OldaleTown_ChestnutHillDiner_RestaurantSign_Text_0:
+	.string "ChestnutHill Diner$"
+
+OldaleTown_FirstDate_BlockedPath_Text_0:
+	.string "I should go see Tyler \n"
+	.string "at the Chestnuthill Diner$"

@@ -1,1 +1,61 @@
 mapscripts OldaleTown_ChestnuthillDiner_MapScripts {}
+
+script OldaleTown_ChestnuthillDiner_EventScript_Woman1 {
+    lockall
+    faceplayer
+    msgbox("He won't stop talking about cheese...")
+    releaseall
+}
+
+script OldaleTown_ChestnuthillDiner_EventScript_Woman2 {
+    lockall
+    faceplayer
+    msgbox("Take a seat and I'll be right with you.")
+    releaseall
+}
+
+script OldaleTown_ChestnuthillDiner_EventScript_Man1 {
+    lockall
+    faceplayer
+    msgbox("We're on our first date! \n"
+        "I think it's going well!")
+    releaseall
+}
+
+script OldaleTown_ChestnuthillDiner_EventScript_FirstDate {
+    lockall
+    msgbox("TYLER: Hey, Tara!")
+    applymovement(3, OldaleTown_ChestnuthillDiner_EventScript_FirstDate_WalkToPlayer)
+    waitmovement(0)
+    msgbox("TYLER: I, uh, got us a table.")
+    applymovement(3, OldaleTown_ChestnuthillDiner_EventScript_FirstDate_WalkBackToTable)
+    applymovement(OBJ_EVENT_ID_PLAYER, OldaleTown_ChestnuthillDiner_EventScript_FirstDate_PlayerWalkToTable)
+    // TODO: Write better
+    msgbox("TYLER: So... uh... do you like your new Pokemon?")
+    msgbox("...")
+    msgbox("That's great! What else do you like to do?")
+    msgbox("...")
+    msgbox("That sounds fun! What do you like about it?")
+    msgbox("...")
+    fadescreen FADE_TO_BLACK
+    releaseall
+}
+
+movement OldaleTown_ChestnuthillDiner_EventScript_FirstDate_WalkToPlayer {
+    walk_down
+    walk_right * 7
+    face_down
+}
+
+movement OldaleTown_ChestnuthillDiner_EventScript_FirstDate_WalkBackToTable {
+    walk_left * 7
+    walk_up
+    face_right
+}
+
+movement OldaleTown_ChestnuthillDiner_EventScript_FirstDate_PlayerWalkToTable {
+    walk_up
+    walk_left * 4
+    walk_up
+    face_left
+}

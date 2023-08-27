@@ -27,11 +27,6 @@
       "map": "MAP_ROUTE102",
       "offset": 0,
       "direction": "left"
-    },
-    {
-      "map": "MAP_CHESTNUT_HILL_DINER",
-      "offset": 0,
-      "direction": "right"
     }
   ],
   "object_events": [
@@ -116,6 +111,13 @@
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_MART",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 32,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_OLDALE_TOWN_CHESTNUTHILL_DINER",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -154,6 +156,42 @@
       "var": "VAR_OLDALE_RIVAL_STATE",
       "var_value": "1",
       "script": "OldaleTown_EventScript_RivalTrigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_RELATIONSHIP_COUNTER",
+      "var_value": "0",
+      "script": "OldaleTown_FirstDate_BlockedPath"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_RELATIONSHIP_COUNTER",
+      "var_value": "0",
+      "script": "OldaleTown_FirstDate_BlockedPath"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_RELATIONSHIP_COUNTER",
+      "var_value": "0",
+      "script": "OldaleTown_FirstDate_BlockedPath"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_RELATIONSHIP_COUNTER",
+      "var_value": "0",
+      "script": "OldaleTown_FirstDate_BlockedPath"
     }
   ],
   "bg_events": [
@@ -196,6 +234,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OldaleTown_ChestnutHillDiner_RestaurantSign"
     }
   ]
 }
