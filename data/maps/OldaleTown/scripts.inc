@@ -4,6 +4,7 @@
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
+	@ map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, OldaleTown_OnWarp
 	.byte 0
 
 OldaleTown_OnTransition:
@@ -13,6 +14,10 @@ OldaleTown_OnTransition:
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
+
+OldaleTown_OnWarp:
+	map_script_2 VAR_RELATIONSHIP_COUNTER, 1, OldaleTown_EventScript_FinishDate
+	.2byte 0
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
 OldaleTown_EventScript_SetOldaleState::
@@ -419,9 +424,50 @@ OldaleTown_FirstDate_BlockedPath_Movement:
 	walk_down
 	step_end
 
+OldaleTown_EventScript_FinishDate::
+	lockall
+	msgbox OldaleTown_EventScript_FinishDate_Text_0
+	msgbox OldaleTown_EventScript_FinishDate_Text_1
+	msgbox OldaleTown_EventScript_FinishDate_Text_2
+	msgbox OldaleTown_EventScript_FinishDate_Text_3
+	msgbox OldaleTown_EventScript_FinishDate_Text_4
+	applymovement 5, OldaleTown_Movement_FirstDate_TylerLeave
+	waitmovement 0
+	removeobject 5
+	setflag FLAG_OLDALE_TOWN_HIDE_TYLER
+	releaseall
+	return
+
+
+OldaleTown_Movement_FirstDate_TylerLeave:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 OldaleTown_ChestnutHillDiner_RestaurantSign_Text_0:
 	.string "ChestnutHill Diner$"
 
 OldaleTown_FirstDate_BlockedPath_Text_0:
 	.string "I should go see Tyler \n"
 	.string "at the Chestnuthill Diner$"
+
+OldaleTown_EventScript_FinishDate_Text_0:
+	.string "TYLER: I had a really good time$"
+
+OldaleTown_EventScript_FinishDate_Text_1:
+	.string "I hope we can do it again sometime soon$"
+
+OldaleTown_EventScript_FinishDate_Text_2:
+	.string "...$"
+
+OldaleTown_EventScript_FinishDate_Text_3:
+	.string "Well, I gotta go to route 103 to \n do some research for my dad$"
+
+OldaleTown_EventScript_FinishDate_Text_4:
+	.string "Bye!$"

@@ -74,11 +74,38 @@
     {
       "type": "trigger",
       "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_RELATIONSHIP_COUNTER",
+      "var_value": "0",
+      "script": "OldaleTown_ChestnuthillDiner_EventScript_FirstDate_North"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_RELATIONSHIP_COUNTER",
+      "var_value": "0",
+      "script": "OldaleTown_ChestnuthillDiner_EventScript_FirstDate_NorthWest"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
       "y": 10,
       "elevation": 0,
       "var": "VAR_RELATIONSHIP_COUNTER",
       "var_value": "0",
-      "script": "NULL"
+      "script": "OldaleTown_ChestnuthillDiner_EventScript_FirstDate_West"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_RELATIONSHIP_COUNTER",
+      "var_value": "0",
+      "script": "OldaleTown_ChestnuthillDiner_EventScript_FirstDate_East"
     }
   ],
   "bg_events": [

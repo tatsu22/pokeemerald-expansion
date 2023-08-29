@@ -5,6 +5,7 @@ raw `
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
+	@ map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, OldaleTown_OnWarp
 	.byte 0
 
 OldaleTown_OnTransition:
@@ -14,6 +15,10 @@ OldaleTown_OnTransition:
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
+
+OldaleTown_OnWarp:
+	map_script_2 VAR_RELATIONSHIP_COUNTER, 1, OldaleTown_EventScript_FinishDate
+	.2byte 0
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
 OldaleTown_EventScript_SetOldaleState::
@@ -418,4 +423,22 @@ script OldaleTown_FirstDate_BlockedPath {
 
 movement OldaleTown_FirstDate_BlockedPath_Movement {
 	walk_down
+}
+
+script OldaleTown_EventScript_FinishDate {
+	lockall
+	msgbox("TYLER: I had a really good time")
+	msgbox("I hope we can do it again sometime soon")
+	msgbox("...")
+	msgbox("Well, I gotta go to route 103 to \n do some research for my dad")
+	msgbox("Bye!")
+    applymovement(5, OldaleTown_Movement_FirstDate_TylerLeave)
+    waitmovement(0)
+    removeobject(5)
+    setflag(FLAG_OLDALE_TOWN_HIDE_TYLER)
+	releaseall
+}
+
+movement OldaleTown_Movement_FirstDate_TylerLeave {
+    walk_left * 8
 }
