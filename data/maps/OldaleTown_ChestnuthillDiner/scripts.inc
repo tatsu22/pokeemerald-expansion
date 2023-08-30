@@ -93,6 +93,7 @@ OldaleTown_ChestnuthillDiner_EventScript_FirstDate_West::
 OldaleTown_ChestnuthillDiner_EventScript_FirstDate::
 	setflag FLAG_CHESTNUTHILL_DINER_HIDE_TYLER
 	clearflag FLAG_OLDALE_TOWN_HIDE_TYLER
+	setvar VAR_RELATIONSHIP_COUNTER, 1
 	msgbox OldaleTown_ChestnuthillDiner_EventScript_FirstDate_Text_0
 	msgbox OldaleTown_ChestnuthillDiner_EventScript_FirstDate_Text_1
 	msgbox OldaleTown_ChestnuthillDiner_EventScript_FirstDate_Text_2
@@ -101,7 +102,6 @@ OldaleTown_ChestnuthillDiner_EventScript_FirstDate::
 	msgbox OldaleTown_ChestnuthillDiner_EventScript_FirstDate_Text_4
 	msgbox OldaleTown_ChestnuthillDiner_EventScript_FirstDate_Text_2
 	msgbox OldaleTown_ChestnuthillDiner_EventScript_FirstDate_Text_2
-	setvar VAR_RELATIONSHIP_COUNTER, 1
 	warp MAP_OLDALE_TOWN, 32, 9
 	waitstate
 	releaseall

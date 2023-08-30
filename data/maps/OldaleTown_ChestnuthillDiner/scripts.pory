@@ -90,6 +90,7 @@ script OldaleTown_ChestnuthillDiner_EventScript_FirstDate {
     // TODO: Write better
     setflag(FLAG_CHESTNUTHILL_DINER_HIDE_TYLER)
     clearflag(FLAG_OLDALE_TOWN_HIDE_TYLER)
+    setvar(VAR_RELATIONSHIP_COUNTER, 1)
     msgbox("TYLER: So... uh... ")
     msgbox("Do you like your new Pokemon?")
     msgbox("...")
@@ -98,7 +99,6 @@ script OldaleTown_ChestnuthillDiner_EventScript_FirstDate {
     msgbox("That sounds fun! What do \nyou like about it?")
     msgbox("...")
     msgbox("...")
-    setvar(VAR_RELATIONSHIP_COUNTER, 1)
     warp(MAP_OLDALE_TOWN, 32, 9)
     waitstate
     releaseall

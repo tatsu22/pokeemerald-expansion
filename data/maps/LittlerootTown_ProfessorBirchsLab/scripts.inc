@@ -799,7 +799,14 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
 	.string "I'm going to explore all over the place\n"
 	.string "to find different POKéMON.\p"
 	.string "If I find any cool POKéMON, you bet\n"
-	.string "I'll try to get them with POKé BALLS.$"
+	.string "I'll try to get them with POKé BALLS.\p"
+	.string "I hope you'll catch a lot of \n"
+	.string "POKéMON, too.\p"
+	.string "I'm headed to Rustboro City to do\n"
+	.string "some research for my dad, do you want\p"
+	.string "to have a little picnic?\p"
+	.string "...\p"
+	.string "Awesome! I can't wait!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull:
 	.string "Hey, your BAG's full.$"

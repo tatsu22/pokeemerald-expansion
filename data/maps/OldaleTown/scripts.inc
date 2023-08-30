@@ -4,7 +4,7 @@
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
-	@ map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, OldaleTown_OnWarp
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, OldaleTown_OnFrame
 	.byte 0
 
 OldaleTown_OnTransition:
@@ -15,7 +15,7 @@ OldaleTown_OnTransition:
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
 
-OldaleTown_OnWarp:
+OldaleTown_OnFrame:
 	map_script_2 VAR_RELATIONSHIP_COUNTER, 1, OldaleTown_EventScript_FinishDate
 	.2byte 0
 
@@ -435,8 +435,9 @@ OldaleTown_EventScript_FinishDate::
 	waitmovement 0
 	removeobject 5
 	setflag FLAG_OLDALE_TOWN_HIDE_TYLER
+	setvar VAR_RELATIONSHIP_COUNTER, 2
 	releaseall
-	return
+	end
 
 
 OldaleTown_Movement_FirstDate_TylerLeave:
@@ -458,16 +459,16 @@ OldaleTown_FirstDate_BlockedPath_Text_0:
 	.string "at the Chestnuthill Diner$"
 
 OldaleTown_EventScript_FinishDate_Text_0:
-	.string "TYLER: I had a really good time$"
+	.string "TYLER: I had a really good time.$"
 
 OldaleTown_EventScript_FinishDate_Text_1:
-	.string "I hope we can do it again sometime soon$"
+	.string "I hope we can do it again \nsometime soon.$"
 
 OldaleTown_EventScript_FinishDate_Text_2:
 	.string "...$"
 
 OldaleTown_EventScript_FinishDate_Text_3:
-	.string "Well, I gotta go to route 103 to \n do some research for my dad$"
+	.string "Well, I gotta go to route 103 to \ndo some research for my dad.$"
 
 OldaleTown_EventScript_FinishDate_Text_4:
 	.string "Bye!$"
