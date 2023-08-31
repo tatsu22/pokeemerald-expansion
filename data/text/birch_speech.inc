@@ -47,7 +47,12 @@ gText_Birch_YourePlayer::
 	.string "You're {PLAYER}{KUN} who's moving to my\n"
 	.string "hometown of LITTLEROOT.\l"
 	.string "I get it now!\p"
-	.string "$"
+	.string "Your hustband also wants to tell you\n"
+	.string "a few things about this game.\p"
+	.string "He's added a bit to the story\n"
+	.string "He also changed almost all the POKéMON\n"
+	.string "you'll find in your travels to ones\p"
+	.string "he thinks you'll like.$"
 
 gText_Birch_AreYouReady::
 	.string "All right, are you ready?\p"
